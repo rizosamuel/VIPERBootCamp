@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AnyView {
+protocol AnyView: AnyObject {
 	
 	var presentor: AnyPresentor? { get set }
 	
@@ -15,7 +15,7 @@ protocol AnyView {
 	func update(with error: Error)
 }
 
-class UserVC: UIViewController, AnyView {
+final class UserVC: UIViewController, AnyView {
 	
 	private let tableView: UITableView = {
 		
@@ -46,6 +46,7 @@ class UserVC: UIViewController, AnyView {
 	}
 	
 	func update(with users: [User]) {
+		
 		DispatchQueue.main.async {
 			self.users = users
 			self.tableView.reloadData()

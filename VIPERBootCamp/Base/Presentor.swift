@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AnyPresentor {
+protocol AnyPresentor: AnyObject {
 	
 	var router: AnyRouter? { get set }
 	var interactor: AnyInteractor? { get set }
@@ -16,14 +16,16 @@ protocol AnyPresentor {
 	func interactorDidFetchUsers(with result: Result<[User], Error>)
 }
 
-class UserPresentor: AnyPresentor {
+final class UserPresentor: AnyPresentor {
 	
 	var router: AnyRouter?
+	
 	var interactor: AnyInteractor? {
 		didSet {
 			interactor?.getUsers()
 		}
 	}
+	
 	var view: AnyView?
 	
 	func interactorDidFetchUsers(with result: Result<[User], Error>) {

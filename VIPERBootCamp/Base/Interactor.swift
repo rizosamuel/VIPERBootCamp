@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol AnyInteractor {
+protocol AnyInteractor: AnyObject {
 	
 	var presentor: AnyPresentor? { get set }
 	
 	func getUsers()
 }
 
-class UserInteractor: AnyInteractor {
+final class UserInteractor: AnyInteractor {
 	
 	private let url = "https://jsonplaceholder.typicode.com/users"
 	var presentor: AnyPresentor?

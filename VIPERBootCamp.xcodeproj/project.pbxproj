@@ -62,10 +62,10 @@
 		73514ABA27789D2D005C5D41 /* VIPERBootCamp */ = {
 			isa = PBXGroup;
 			children = (
-				73514ACF27789DEE005C5D41 /* Base */,
 				73514ABB27789D2D005C5D41 /* AppDelegate.swift */,
 				73514ABD27789D2D005C5D41 /* SceneDelegate.swift */,
 				73514AC627789D2E005C5D41 /* LaunchScreen.storyboard */,
+				73514ACF27789DEE005C5D41 /* Base */,
 				73514AC427789D2E005C5D41 /* Assets.xcassets */,
 				73514AC927789D2E005C5D41 /* Info.plist */,
 			);
